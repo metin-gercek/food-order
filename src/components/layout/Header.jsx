@@ -12,7 +12,6 @@ const Header = () => {
   const [isMenuModal, setIsMenuModal] = useState(false);
 
   const router = useRouter();
-  console.log(router);
 
   return (
     <div
