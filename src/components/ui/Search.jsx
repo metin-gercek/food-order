@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import OutsideClickHandler from "react-outside-click-handler";
-import Title from "../ui/Title";
+import Title from "./Title";
 import { GiCancel } from "react-icons/gi";
 
 const Search = ({ setIsSearchModal }) => {
