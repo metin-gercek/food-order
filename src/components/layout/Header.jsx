@@ -48,16 +48,16 @@ const Header = () => {
           )}
         </nav>
         <div className="flex gap-x-4 items-center">
-          <a href="#">
+          <a href="">
             <FaUserAlt className="hover:text-primary transition-all" />
           </a>
-          <a href="#">
+          <a href="">
             <FaShoppingCart className="hover:text-primary transition-all" />
           </a>
           <button onClick={() => setIsSearchModal(true)}>
             <FaSearch className="hover:text-primary transition-all" />
           </button>
-          <a href="#" className="md:inline-block hidden sm">
+          <a href="" className="md:inline-block hidden sm">
             <button className="btn-primary">Order Online</button>
           </a>
           <button
