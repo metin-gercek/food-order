@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Title from "./ui/Title";
 import { MdShoppingCart } from "react-icons/md";
 const CampaignsItem = () => {
@@ -7,7 +7,7 @@ const CampaignsItem = () => {
       <div className="relative md:w-44 md:h-44 w-36 h-36 after:content-[''] border-[5px] border-primary rounded-full overflow-hidden">
         <Image
           src="/images/food1.jpg"
-          fill
+          layout='fill'
           className="hover:scale-105 transition-all"
           alt="Campaigns"
         />

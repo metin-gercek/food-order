@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
 import OutsideClickHandler from "react-outside-click-handler";
 import Logo from "../ui/Logo";
-import Title from "../ui/Title";
 import Search from "../ui/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import { useRouter } from "next/router";
