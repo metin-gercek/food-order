@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Title from "./ui/Title";
 import Slider from "react-slick";
 
@@ -26,7 +26,7 @@ const Carousel = () => {
     <div className=" h-screen w-full container mx-auto -mt-[88px]">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className=" z-0 relative h-full w-full">
-          <Image src="/images/hero-bg.png" alt="" layout='fill' objectFit="cover" />
+          <Image src="/images/hero-bg.png" alt="" fill objectFit="cover" />
         </div>
       </div>
       <Slider {...settings}>

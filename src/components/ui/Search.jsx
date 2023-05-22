@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import Title from "./Title";

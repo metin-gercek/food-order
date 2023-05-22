@@ -7,7 +7,7 @@ const About = () => {
     <div className="bg-secondary py-14">
       <div className="container mx-auto flex items-center text-white gap-20 justify-center flex-wrap">
         <div className="flex justify-center">
-          <div className="relative sm-h-[600px]  flex justify-center w-[300px] h-[450px]">
+          <div className="relative  sm-h-[600px]  flex justify-center w-[300px] h-[450px]">
             <Image src="/images/about-img.png" alt="" layout="fill" />
           </div>
         </div>
