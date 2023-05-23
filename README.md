@@ -42,4 +42,5 @@ NOTES:
 Tailwind CSS
 React-outside-click-handler (Click outside for search popup)
 React Slick (Slider)
-Formik input validation
+Formik input 
+YUP validation

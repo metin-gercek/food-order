@@ -1,16 +1,19 @@
-import React from 'react'
+import React from "react";
 
 const Input = (props) => {
   // console.log(props)
-  const { type, placeholder, ...inputProps } = props;
+  const { type, errorMessage, touched, placeholder, ...inputProps } = props;
+  // console.log(errorMessage);
   return (
     <div className="w-full">
       <label className="relative block cursor-text w-full">
-      <input
+        <input
           type={type}
-          className={`h-14 w-full border border-primary outline-none px-4 peer ${
-            type !== "datetime-local" && "pt-2"
-          }`}
+          className={`h-14 w-full border outline-none px-4 peer 
+          ${type !== "datetime-local" && "pt-2"}
+          ${touched && errorMessage ? "border-red-500" : "border-primary"}
+          
+          `}
           required
           {...inputProps}
         />
@@ -20,8 +23,9 @@ const Input = (props) => {
           </span>
         )}
       </label>
+      {touched && <span className="text-xs text-danger">{errorMessage}</span>}
     </div>
   );
 };
 
-export default Input
+export default Input;
