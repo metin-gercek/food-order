@@ -44,3 +44,4 @@ React-outside-click-handler (Click outside for search popup)
 React Slick (Slider)
 Formik input 
 YUP validation
+Fontawesome
