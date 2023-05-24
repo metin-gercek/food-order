@@ -3,15 +3,19 @@ import Carousel from "../../components/Carousel";
 import React from "react";
 import MenuWrapper from "../../components/product/MenuWrapper";
 import About from "@/components/About";
+import Reservation from "@/components/Reservation";
+import Customers from "@/components/customers/Customers";
 
 const Index = () => {
   return (
-    <div >
+    <React.Fragment >
       <Carousel />
       <Campaigns />
       <MenuWrapper />
       <About />
-    </div>
+      <Reservation />
+      <Customers />
+    </React.Fragment>
   );
 };
 
