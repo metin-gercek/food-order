@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <div className="flex items-center h-screen gap-20 py-20 flex-wrap ">
       <div className="relative md:flex-1 w-[80%] h-[80%] mx-20">
-        <Image src="/images/pizza3.png" alt="" fill objectFit="contain" />
+        <Image src="/images/pizza3.png" alt="" fill style={{objectFit:"contain"}} />
       </div>
       <div className="md:flex-1 md:text-start text-center">
         <Title addClass="text-6xl">Good Pizza</Title>

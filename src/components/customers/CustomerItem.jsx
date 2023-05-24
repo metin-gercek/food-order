@@ -23,7 +23,7 @@ const CustomerItem = ({ imgSrc }) => {
           src={imgSrc}
           alt=""
           fill
-          objectFit="contain"
+          style={{objectFit:"contain"}}
           className="rounded-full"
         />
       </div>
