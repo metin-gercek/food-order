@@ -53,7 +53,7 @@ const Register = () => {
       id: 4,
       name: "confirmPassword",
       type: "password",
-      placeholder: "Your Password Again",
+      placeholder: "Confirm Password",
       value: values.confirmPassword,
       errorMessage: errors.confirmPassword,
       touched: touched.confirmPassword,
