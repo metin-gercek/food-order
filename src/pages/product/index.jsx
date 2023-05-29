@@ -4,7 +4,7 @@ import Title from "../../components/ui/Title";
 
 const Index = () => {
   return (
-    <div className="flex items-center md:h-screen gap-5 py-20 flex-wrap ">
+    <div className="flex items-center md:h-screen gap-5; py-20 flex-wrap ">
       <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-64 h-64  mx-auto">
         <Image src="/images/pizza3.png" alt="" fill style={{objectFit:"contain"}} />
       </div>
