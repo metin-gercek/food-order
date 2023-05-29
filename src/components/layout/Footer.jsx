@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="flex flex-col gap-y-2 mt-3">
               <div>
                 <i className="fa fa-map-marker"></i>
-                <span className="inline-block ml-2">Location</span>
+                <span className="inline-block ml-2">Helsinki</span>
               </div>
               <div>
                 <i className="fa fa-phone"></i>
@@ -19,12 +19,12 @@ const Footer = () => {
               </div>
               <div>
                 <i className="fa fa-envelope"></i>
-                <span className="inline-block ml-2">info@gmail.com</span>
+                <span className="inline-block ml-2">bitelicious@bitelicious.com</span>
               </div>
             </div>
           </div>
           <div className="md:flex-1">
-            <Title addClass="text-[38px]">Company Name</Title>
+            <Title addClass="text-[38px]">BiteLicious</Title>
             <p className="mt-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis harum exercitationem repellat pariatur amet. Exercitationem.
             </p>
