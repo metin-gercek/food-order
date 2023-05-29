@@ -45,3 +45,4 @@ React Slick (Slider)
 Formik input 
 YUP validation
 Fontawesome
+Redux - redux toolkit
