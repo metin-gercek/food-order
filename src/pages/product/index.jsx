@@ -1,17 +1,72 @@
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Title from "../../components/ui/Title";
 
 const Index = () => {
+  const extraItemList = [
+    {
+      id: 1,
+      name: "Mozzarella",
+      price: 1,
+    },
+    {
+      id: 2,
+      name: "Pepperoni",
+      price: 1,
+    },
+    {
+      id: 3,
+      name: "Mushrooms",
+      price: 2,
+    },
+    {
+      id: 4,
+      name: "Onions",
+      price: 1,
+    },]
+    const [prices, setPrices] = useState([8, 12, 16]);
+    const [price, setPrice] = useState(prices[0]);
+    const [size, setSize] = useState(0);
+    const [extraItems, setExtraItems] = useState(extraItemList);
+    const [extras, setExtras] = useState([]);
+  
+    const handleSize = (sizeIndex) => {
+      const difference = prices[sizeIndex] - prices[size];
+      setSize(sizeIndex);
+      changePrice(difference);
+    };
+  
+    const changePrice = (number) => {
+      setPrice(price + number);
+    };
+  
+    const handleChange = (e, item) => {
+      const checked = e.target.checked;
+  
+      if (checked) {
+        changePrice(item.price);
+        setExtras([...extras, item]);
+      } else {
+        changePrice(-item.price);
+        setExtras(extras.filter((extra) => extra.id !== item.id));
+      }
+    };
+    console.log(extras);
+
   return (
-    <div className="flex items-center md:h-screen gap-5; py-20 flex-wrap ">
+    <div className="flex items-center md:h-[calc(100vh_-_88px)] gap-5; py-20 flex-wrap ">
       <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-64 h-64  mx-auto">
-        <Image src="/images/pizza3.png" alt="" fill style={{objectFit:"contain"}} />
+        <Image
+          src="/images/pizza3.png"
+          alt=""
+          fill
+          style={{ objectFit: "contain" }}
+        />
       </div>
       <div className="md:flex-1 md:text-start text-center">
         <Title addClass="text-6xl">Good Pizza</Title>
         <span className="text-primary text-2xl font-bold underline underline-offset-1 my-4 inline-block">
-          €10
+          €{price}
         </span>
         <p className="text-sm my-4 md:pr-24">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit neque,
@@ -21,19 +76,19 @@ const Index = () => {
         <div>
           <h4 className="text-xl font-bold">Choose the size</h4>
           <div className="flex items-center gap-x-20 md:justify-start justify-center">
-            <div className="relative w-8 h-8">
+            <div className="relative w-8 h-8 cursor-pointer" onClick={() => handleSize(0)}>
               <Image src="/images/size.png" alt="" fill />
               <span className="absolute top-0 -right-6 text-xs bg-primary rounded-full px-[5px] font-medium">
                 Small
               </span>
             </div>
-            <div className="relative w-12 h-12">
+            <div className="relative w-12 h-12  cursor-pointer" onClick={() => handleSize(1)}>
               <Image src="/images/size.png" alt="" fill />
               <span className="absolute top-0 -right-6 text-xs bg-primary rounded-full px-[5px] font-medium">
                 Medium
               </span>
             </div>
-            <div className="relative w-16 h-16">
+            <div className="relative w-16 h-16  cursor-pointer" onClick={() => handleSize(2)}>
               <Image src="/images/size.png" alt="" fill />
               <span className="absolute top-0 -right-6 text-xs bg-primary rounded-full px-[5px] font-medium">
                 Large
@@ -41,19 +96,18 @@ const Index = () => {
             </div>
           </div>
         </div>
+        <h4 className="text-base font-bold">Extras</h4>
         <div className="flex gap-x-4 my-6 md:justify-start justify-center">
-          <label className="flex items-center gap-x-1">
-            <input type="checkbox" className="w-5 h-5 accent-primary" />
-            <span className="text-sm font-semibold">Ketchup</span>
-          </label>
-          <label className="flex items-center gap-x-1">
-            <input type="checkbox" className="w-5 h-5 accent-primary" />
-            <span className="text-sm font-semibold">Mayonnaise</span>
-          </label>
-          <label className="flex items-center gap-x-1">
-            <input type="checkbox" className="w-5 h-5 accent-primary" />
-            <span className="text-sm font-semibold">Hot sauce</span>
-          </label>
+        {extraItems.map((item) => (
+            <label className="flex items-center gap-x-1 cursor-pointer" key={item.id}>
+              <input
+                type="checkbox"
+                className="w-5 h-5 accent-primary"
+                onChange={(e) => handleChange(e, item)}
+              />
+              <span className="text-sm font-semibold">{item.name}</span>
+            </label>
+          ))}
         </div>
         <button className="btn-primary">Add to Cart</button>
       </div>
