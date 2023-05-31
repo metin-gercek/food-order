@@ -74,7 +74,7 @@ const Index = () => {
     };
 
     const handleClick = () => {
-      dispatch(addProduct({...foodItems[0], size, extras, quatity: 1}));
+      dispatch(addProduct({...foodItems[0], price, size, extras, quantity: 1}));
       
     }
     console.log(cart);
