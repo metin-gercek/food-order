@@ -4,14 +4,20 @@ import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
 import { registerSchema } from "../../schema/register";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const onSubmit = async (values, actions) => {
     try {
-      const res = axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, values)
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/users/register`,
+        values
+      );
+     if(res.status === 200) {
+       toast.success('Register successfully, please login to continue')
+     }
     } catch (error) {
-      console.log(error);
-      
+      toast.error(error.response.data.message)
     }
     // await new Promise((resolve) => setTimeout(resolve, 4000));
     // actions.resetForm();
@@ -85,7 +91,9 @@ const Register = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="btn-primary" type="submit">REGISTER</button>
+          <button className="btn-primary" type="submit">
+            REGISTER
+          </button>
           <Link href="/auth/login">
             <span className="text-sm underline cursor-pointer text-secondary">
               Do you have an account?

@@ -49,3 +49,4 @@ Redux - redux toolkit
 Mongoose
 next auth
 axios
+React-Toastify
