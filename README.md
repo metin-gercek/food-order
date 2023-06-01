@@ -46,3 +46,4 @@ Formik input
 YUP validation
 Fontawesome
 Redux - redux toolkit
+Mongoose
