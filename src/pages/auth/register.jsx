@@ -19,8 +19,7 @@ const Register = () => {
     } catch (error) {
       toast.error(error.response.data.message)
     }
-    // await new Promise((resolve) => setTimeout(resolve, 4000));
-    // actions.resetForm();
+    actions.resetForm();
   };
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
     useFormik({
