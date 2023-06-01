@@ -47,3 +47,4 @@ YUP validation
 Fontawesome
 Redux - redux toolkit
 Mongoose
+next auth
