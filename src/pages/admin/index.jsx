@@ -1,14 +1,14 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import Link from "next/link";
 import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
 import { adminSchema } from "../../schema/admin";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 const Login = () => {
-  const push = useRouter();
+  const { push } = useRouter();
 
   const onSubmit = async (values, actions) => {
     try {
@@ -17,12 +17,13 @@ const Login = () => {
         values
       );
       if (res.status === 200) {
+        console.log(res.data);
         actions.resetForm();
-        toast.success("Admin Login Success");
-        push.push("/admin/profile");
+        toast.success("Admin Login Success!");
+        push("/admin/profile");
       }
-    } catch (error) {
-      toast.error(error.response.data.message);
+    } catch (err) {
+      console.log(err);
     }
   };
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
@@ -57,7 +58,7 @@ const Login = () => {
   ];
 
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto py-3">
       <form
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
@@ -86,8 +87,20 @@ const Login = () => {
   );
 };
 
-export const getServerSideProps = async (ctx) => {
-  const myCookie = ctx.req?.cookie || "";
-}
+export const getServerSideProps = (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+  if (myCookie.token === process.env.ADMIN_TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/profile",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
 
 export default Login;

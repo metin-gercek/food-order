@@ -12,15 +12,26 @@ const handler = (req, res) => {
       res.setHeader(
         "Set-Cookie",
         cookie.serialize("token", process.env.ADMIN_TOKEN, {
-          maxAge: 60 * 60, // 1 hour
+          maxAge: 60 * 60,
           sameSite: "strict",
           path: "/",
         })
       );
-      res.status(200).json({ message: "Login successful" });
+      res.status(200).json({ message: "Success" });
     } else {
-      res.status(403).json({ message: "Invalid credentials" });
+      res.status(400).json({ message: "Wrong Credentials" });
     }
+  }
+
+  if (method === "PUT") {
+    res.setHeader(
+      "Set-Cookie",
+      cookie.serialize("token", process.env.ADMIN_TOKEN, {
+        maxAge: -1,
+        path: "/",
+      })
+    );
+    res.status(200).json({ message: "Success" });
   }
 };
 
