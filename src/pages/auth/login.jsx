@@ -3,10 +3,9 @@ import Link from "next/link";
 import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
 import { loginSchema } from "../../schema/login";
-import { useSession, signIn } from "next-auth/react";
+import { useSession, signIn, getSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { getSession } from "next-auth/react";
 
 const Login = () => {
   const { push } = useRouter();
@@ -17,19 +16,11 @@ const Login = () => {
     try {
       const res = await signIn("credentials", options);
       actions.resetForm();
-      push("/profile");
+      push("/profile/647b79b824569b4531fd689c");
     } catch (error) {
       console.log(error);
     }
   };
-  // console.log(session);
-
-  // useEffect(() => {
-
-  //   if (session) {
-  //     push("/profile");
-  //   }
-  // }, [session, push]);
 
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
     useFormik({
@@ -111,7 +102,7 @@ export async function getServerSideProps({ req }) {
   if (session) {
     return {
       redirect: {
-        destination: "/profile",
+        destination: "/profile/647b79b824569b4531fd689c",
         permanent: false,
       },
     };

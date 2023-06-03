@@ -2,10 +2,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Account from "../../components/profile/Account";
 import Password from "../../components/profile/Password";
-import Order from "../../components/profile/Order"; 
+import Order from "../../components/profile/Order";
 import { signOut, getSession } from "next-auth/react";
 import { useRouter } from "next/router";
-
+import axios from "axios";
 
 const Profile = ({ session }) => {
   const [tabs, setTabs] = useState(0);
@@ -16,10 +16,12 @@ const Profile = ({ session }) => {
       signOut({ redirect: false });
       push("/auth/login");
     }
-  }
+  };
 
   useEffect(() => {
-    push("/auth/login");
+    if (!session) {
+      push("/auth/login");
+    }
   }, [session, push]);
 
   return (
@@ -84,22 +86,25 @@ const Profile = ({ session }) => {
   );
 };
 
-export async function getServerSideProps({req}) {
-  const session = await getSession({req});
-  if(!session) {
+export async function getServerSideProps({ req, params }) {
+  const session = await getSession({ req });
+  if (!session) {
     return {
       redirect: {
         destination: "/auth/login",
-        permanent: false
-      }
-    }
+        permanent: false,
+      },
+    };
   }
 
+  const user = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users/${params.id}`);
   return {
     props: {
-      session
-    }
-  }
+      session,
+    },
+  };
 }
+
+
 
 export default Profile;
