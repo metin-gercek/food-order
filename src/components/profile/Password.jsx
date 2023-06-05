@@ -4,16 +4,29 @@ import Title from "../../components/ui/Title";
 import { useFormik } from "formik";
 import { registerSchema } from "../../schema/register";
 import { newPasswordSchema } from "../../schema/newPassword";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
-const Password = () => {
+
+const Password = ({user}) => {
+  const router = useRouter(); 
   const onSubmit = async (values, actions) => {
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    try {
+      const res = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/users/${user._id}`, values);
+      if(res.status === 200) {
+        toast.success('Update password successfully')
+      }
+      router.replace(router.asPath);
+    } catch (error) {
+      toast.error(error.response.data.message)
+    }
     actions.resetForm();
-    console.log("values", values);
   };
 
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
     useFormik({
+      enableReinitialize: true,
       initialValues: {
         password: "",
         confirmPassword: "",
