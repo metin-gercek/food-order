@@ -8,6 +8,7 @@ const CampaignsItem = () => {
         <Image
           src="/images/food1.jpg"
           fill
+          sizes="100vh"
           className="hover:scale-105 transition-all"
           alt="Campaigns"
         />
