@@ -67,7 +67,7 @@ const Category = () => {
             Add
           </button>
         </div>
-        <div className="mt-10  max-h-[250px] overflow-auto pb-4">
+        <div className="mt-10  max-h-[296px] overflow-auto pb-4">
           {categories.map((category) => (
             <div className="flex justify-between mt-4" key={category._id}>
               <b className="text-xl">{category.title}</b>
