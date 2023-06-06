@@ -10,9 +10,9 @@ const Carousel = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows:false,
-    autoplay:true,
-    autoplaySpeed:3500,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3500,
     appenDots: (dots) => (
       <div>
         <ul>{dots}</ul>
@@ -26,7 +26,13 @@ const Carousel = () => {
     <div className=" h-screen w-full container mx-auto -mt-[88px]">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className=" z-0 relative h-full w-full">
-          <Image src="/images/hero-bg.png" alt="" fill style={{objectFit:"cover"}} />
+          <Image
+            src="/images/hero-bg.png"
+            alt=""
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
         </div>
       </div>
       <Slider {...settings}>
@@ -66,7 +72,6 @@ const Carousel = () => {
             <button className="btn-primary">Order Now</button>
           </div>
         </div>
-        
       </Slider>
     </div>
   );

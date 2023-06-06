@@ -11,6 +11,7 @@ const CampaignsItem = () => {
           sizes="100vh"
           className="hover:scale-105 transition-all"
           alt="Campaigns"
+          priority
         />
       </div>
       <div className="text-white">
@@ -20,7 +21,7 @@ const CampaignsItem = () => {
           <span className="text-sm inline-block ml-1">Off</span>
         </div>
         <button className="btn-primary flex items-center gap-x-2">
-        <MdShoppingCart size={20} /> Order Now 
+          <MdShoppingCart size={20} /> Order Now
         </button>
       </div>
     </div>
