@@ -7,9 +7,11 @@ import Footer from "../../components/admin/Footer";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { toast } from "react-toastify";
+import AddProduct from "../../components/admin/AddProduct";
 
 const Profile = () => {
   const [tabs, setTabs] = useState(0);
+  const [isProductModal, setIsProductModal] = useState(false);
 
   const { push } = useRouter();
 
@@ -26,7 +28,7 @@ const Profile = () => {
       console.log(err);
     }
   };
-  
+
   return (
     <div className="flex px-10 min-h-[calc(100vh_-_433px)] lg:flex-row flex-col lg:mb-0 mb-10">
       <div className="lg:w-80 w-100 flex-shrink-0">
@@ -78,7 +80,7 @@ const Profile = () => {
             <button className="ml-1">Footer</button>
           </li>
           <li
-             className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
+            className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
               tabs === 4 && "bg-primary text-white"
             }`}
             onClick={closeAdminAccount}
@@ -92,6 +94,10 @@ const Profile = () => {
       {tabs === 1 && <Order />}
       {tabs === 2 && <Category />}
       {tabs === 3 && <Footer />}
+      {isProductModal && <AddProduct setIsProductModal={setIsProductModal} />}
+      <button className="btn-primary w-10 h-10 !p-0 absolute bottom-14 right-20 " onClick={() => setIsProductModal(true)}>
+        <i className="fa fa-plus"></i>
+      </button>
     </div>
   );
 };
@@ -111,6 +117,5 @@ export const getServerSideProps = (ctx) => {
     props: {},
   };
 };
-
 
 export default Profile;
