@@ -12,7 +12,7 @@ const Carousel = () => {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 5000,
     appenDots: (dots) => (
       <div>
         <ul>{dots}</ul>
@@ -38,36 +38,36 @@ const Carousel = () => {
       <Slider {...settings}>
         <div>
           <div className="mt-48 text-white flex flex-col items-start gap-y-10">
-            <Title addClass="text-6xl">Fast Food Restaurant</Title>
+            <Title addClass="text-6xl">Unleash Your Cravings</Title>
             <p className="text-sm sm:w-2/5 w-full">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-              ipsam ut delectus veniam ab blanditiis maiores aliquam
-              accusantium, voluptatem alias inventore dolor corrupti magni
-              illum.
+              Indulge in a Flavorful Symphony at BiteLecious! Savor our
+              mouthwatering pizzas, juicy hamburgers, and refreshing beverages
+              for a culinary experience that will leave you craving for more.
             </p>
             <button className="btn-primary">Order Now</button>
           </div>
         </div>
         <div>
           <div className="mt-48 text-white flex flex-col items-start gap-y-10">
-            <Title addClass="text-6xl">Fast Food Restaurant</Title>
+            <Title addClass="text-6xl">The Ultimate Taste Adventure</Title>
             <p className="text-sm sm:w-2/5 w-full">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-              ipsam ut delectus veniam ab blanditiis maiores aliquam
-              accusantium, voluptatem alias inventore dolor corrupti magni
-              illum.
+              Taste the Perfect Harmony of Pizza, Burgers, and More! BiteLecious
+              offers a delectable assortment of handcrafted pizzas, gourmet
+              burgers, and a delightful range of beverages to satisfy your
+              cravings. Prepare for a tantalizing journey of flavors!
             </p>
             <button className="btn-primary">Order Now</button>
           </div>
         </div>
         <div>
           <div className="mt-48 text-white flex flex-col items-start gap-y-10">
-            <Title addClass="text-6xl">Fast Food Restaurant</Title>
+            <Title addClass="text-6xl">Satisfy Your Culinary Desires</Title>
             <p className="text-sm sm:w-2/5 w-full">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
-              ipsam ut delectus veniam ab blanditiis maiores aliquam
-              accusantium, voluptatem alias inventore dolor corrupti magni
-              illum.
+              Delicious Delights Await at BiteLecious! Dive into a world of
+              scrumptious pizzas, juicy hamburgers, and refreshing beverages
+              that will awaken your taste buds. Discover the ultimate blend of
+              flavors and quality ingredients, prepared with love and served
+              with a smile.
             </p>
             <button className="btn-primary">Order Now</button>
           </div>

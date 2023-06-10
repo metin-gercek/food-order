@@ -131,7 +131,7 @@ const AddProduct = ({ setIsProductModal }) => {
               />
             </div>
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">desc</span>
+              <span className="font-semibold mb-[2px]">Description</span>
               <textarea
                 className="border-2 p-1 text-sm px-1 outline-none"
                 placeholder="Write a description..."
