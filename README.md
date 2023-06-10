@@ -51,3 +51,4 @@ next auth
 axios
 React-Toastify
 Cookie
+cloudinary
