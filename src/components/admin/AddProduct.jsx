@@ -84,6 +84,7 @@ const AddProduct = ({ setIsProductModal }) => {
         setExtra("");
       }
     }
+   
   };
 
   const changePrice = (e, index) => {
