@@ -31,15 +31,15 @@ const Cart = () => {
             {cart.products.map((product) => (
                 <tr
                   className="transition-all bg-secondary border-gray-700 hover:bg-primary"
-                  key={product.id}
+                  key={product._id}
                 >
                   <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white flex items-center gap-x-1 justify-center">
-                    <Image src="/images/pizza1.png" alt="" width={50} height={50} />
-                    <span>{product.name}</span>
+                    <Image src={product.img} alt="" width={50} height={50} />
+                    <span>{product.title}</span>
                   </td>
                   <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                     {product.extras.map((item) => (
-                      <span key={item.id}>{item.text}, </span>
+                      <span key={item._id}>{item.text}, </span>
                     ))}
                   </td>
                   <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
