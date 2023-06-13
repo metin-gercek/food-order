@@ -95,6 +95,7 @@ const Index = ({ food }) => {
                 onChange={(e) => handleChange(e, item)}
               />
               <span className="text-sm font-semibold">{item.text}</span>
+              <span className="inline-flex items-center justify-center w-6 text-xs font-semibold bg-primary rounded-full">€ {item.price}</span>
             </label>
           ))}
         </div>
