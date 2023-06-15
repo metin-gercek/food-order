@@ -52,3 +52,4 @@ axios
 React-Toastify
 Cookie
 cloudinary
+React Spinners (Packman loader)
