@@ -1,44 +1,87 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import Title from "./Title";
 import { GiCancel } from "react-icons/gi";
+import axios from "axios";
+import Input from "../form/Input";
+import { useRouter } from "next/router";
+import { set } from "mongoose";
+import { PacmanLoader } from "react-spinners";
 
 const Search = ({ setIsSearchModal }) => {
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/products`
+        );
+        setProducts(res.data);
+        setFilteredProducts(res.data.slice(0, 5));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    setTimeout(() => {
+      getProducts();
+    }, 1000);
+  }, []);
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    const searchValue = products
+      .filter((product) =>
+        product.title.toLowerCase().includes(e.target.value.toLowerCase())
+      )
+      .slice(0, 5);
+    setFilteredProducts(searchValue);
+  };
+
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 after:content-[''] after:w-screen after:h-screen after:bg-white after:absolute after:top-0 after:left-0 after:opacity-60 grid place-content-center">
       <OutsideClickHandler onOutsideClick={() => setIsSearchModal(false)}>
         <div className="w-full h-full grid place-content-center relative">
           <div className="relative z-50 md:w-[600px] w:[370px ]  bg-white border-2 p-10 rounded-3xl">
             <Title addClass="text-[40px] text-center">Search</Title>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="border w-full my-10"
-            />
-            <ul>
-              <li className="flex items-center justify-between p-1 hover:bg-primary transition-all">
-                <div className="relative flex">
-                  <Image src="/images/pizza1.png" alt="" width={48} height={48} />
-                </div>
-                <span className="font-bold">Good Pizza</span>
-                <span className="font-bold">$10</span>
-              </li>
-              <li className="flex items-center justify-between p-1 hover:bg-primary transition-all">
-                <div className="relative flex">
-                  <Image src="/images/pizza1.png" alt="" width={48} height={48} />
-                </div>
-                <span className="font-bold">Good Pizza</span>
-                <span className="font-bold">$10</span>
-              </li>
-              <li className="flex items-center justify-between p-1 hover:bg-primary transition-all">
-                <div className="relative flex">
-                  <Image src="/images/pizza1.png" alt="" width={48} height={48} />
-                </div>
-                <span className="font-bold">Good Pizza</span>
-                <span className="font-bold">$10</span>
-              </li>
-            </ul>
+            <Input placeholder="Search..." onChange={handleSearch} />
+            {products.length > 0 ? (
+              <ul className="mt-4">
+                {filteredProducts.length > 0 ? (
+                  filteredProducts.map((product) => (
+                    <li
+                      className="flex items-center justify-between p-1 hover:bg-primary transition-all px-2 cursor-pointer"
+                      key={product._id}
+                      onClick={() => {
+                        router.push(`/product/${product?._id}`);
+                        setIsSearchModal(false);
+                      }}
+                    >
+                      <div className="relative flex">
+                        <Image
+                          src={product?.img}
+                          alt={product?.title}
+                          width={48}
+                          height={48}
+                        />
+                      </div>
+                      <span className="font-bold">{product?.title}</span>
+                      <span className="font-bold">${product.prices[0]}</span>
+                    </li>
+                  ))
+                ) : (
+                  <p className="text-center font-semibold">No results found!</p>
+                )}
+              </ul>
+            ) : (
+              <div className="flex justify-center items-center mt-3">
+                <PacmanLoader color="#fca311" />
+              </div>
+            )}
             <button
               className="absolute  top-4 right-4"
               onClick={() => setIsSearchModal(false)}
