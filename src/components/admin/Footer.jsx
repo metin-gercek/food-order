@@ -27,7 +27,6 @@ const Footer = () => {
     getFooterData();
   }, []);
 
-  
   const onSubmit = async (values, actions) => {
     try {
       const res = await axios.put(
@@ -139,7 +138,6 @@ const Footer = () => {
     setSocialMediaLinks((prev) => prev.filter((item, i) => i !== index));
   };
 
-
   return (
     <form className="lg:p-8 flex-1 lg:mt-0 mt-5" onSubmit={handleSubmit}>
       <Title addClass="text-[40px]">Footer Settings</Title>
@@ -171,7 +169,7 @@ const Footer = () => {
           </button>
         </div>
         <ul className="flex items-center gap-6">
-        {socialMediaLinks?.map((item, index) => (
+          {socialMediaLinks?.map((item, index) => (
             <li key={index} className="flex items-center">
               <i className={`${item.icon} text-2xl`}></i>
               <button

@@ -22,7 +22,6 @@ const Account = ({user}) => {
       toast.error(error.response.data.message)
     }
     
-    actions.resetForm();
   };
 
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
