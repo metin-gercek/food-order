@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -20,10 +21,14 @@ body {
   @apply !flex justify-start w-full;
 }
 
+.slick-dots li {
+  @apply !m-0;
+}
+
 .slick-dots .slick-active div {
-  @apply bg-primary h-4;
+  @apply bg-primary scale-150;
 }
 
 .slick-dots div {
-  @apply !m-0 !mt-5;
+  @apply !m-0 !mt-8;
 }
