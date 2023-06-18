@@ -55,7 +55,7 @@ const Category = () => {
 
   return (
     <div className="lg:p-8 flex-1 lg:mt-0 mt-5">
-      <Title addClass="text-[40px]">Category</Title>
+      <Title addClass="text-[40px]">Categories</Title>
       <div className="mt-5">
         <div className="flex gap-4 flex-1 items-center">
           <Input

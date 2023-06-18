@@ -12,14 +12,18 @@ const About = () => {
           </div>
         </div>
         <div className="md:w-1/2 ">
-          <Title addClass="text-[40px]">We Are Feane</Title>
+          <Title addClass="text-[40px]">We Are BitiLecious</Title>
           <p className="my-5 flex flex-col items-center">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don`t look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you
-            need to be sure there isn`t anything embarrassing hidden in the
-            middle of text. All
+            We, at Bitilecious, are a vibrant and dynamic fast food and pizza
+            restaurant that caters to the cravings of food enthusiasts. With our
+            diverse menu filled with mouthwatering dishes, prepared with the
+            freshest ingredients and meticulous attention to detail, we offer a
+            delightful dining experience. Our commitment to fast service without
+            compromising on quality, coupled with our friendly and attentive
+            staff, ensures customer satisfaction. The inviting ambiance of our
+            restaurant creates the perfect setting for a casual meal, and
+            whether you choose to dine in, take out, or have our food delivered,
+            we guarantee an unforgettable culinary journey.
           </p>
           <button className="btn-primary">Read More</button>
         </div>
