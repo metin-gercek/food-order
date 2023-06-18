@@ -54,8 +54,8 @@ const Footer = () => {
             <div className="flex items-center justify-center mt-5 gap-x-2">
               {footer?.socialMedia?.map((item) => (
                 <a
-                href={item.link} key={item._id} target="_blank" rel="noreferrer"
-                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-primary transition-all"
+                href={item?.link} key={item._id} target="_blank" rel="noreferrer"
+                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-white hover:bg-primary transition-all"
               >
                 <i className={item.icon}></i>
               </a>
