@@ -27,8 +27,8 @@ const MenuWrapper = ({ categoryList, productList }) => {
             categoryList.map((category, index) => (
               <button
                 className={`px-6 py-2  rounded-3xl ${
-                  index === active && "bg-secondary text-white"
-                }`}
+                  index === active && "bg-secondary text-primary"
+                } `}
                 key={category._id}
                 onClick={() => {
                   setActive(index);
