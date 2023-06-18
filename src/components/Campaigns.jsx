@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Title from "./ui/Title";
 import { MdShoppingCart } from "react-icons/md";
+import { useRouter } from "next/router";
+
 const CampaignsItem = () => {
+  const router = useRouter();
   return (
     <div className="bg-secondary flex-1 rounded-md py-5 px-[15px] flex items-center gap-x-10">
       <div className="relative md:w-44 md:h-44 w-36 h-36 after:content-[''] border-[5px] border-primary rounded-full overflow-hidden">
@@ -20,7 +23,7 @@ const CampaignsItem = () => {
           <span className="text-[40px]">20%</span>
           <span className="text-sm inline-block ml-1">Off</span>
         </div>
-        <button className="btn-primary flex items-center gap-x-2">
+        <button onClick={() => router.push("/menu")} className="btn-primary flex items-center gap-x-2">
           <MdShoppingCart size={20} /> Order Now
         </button>
       </div>

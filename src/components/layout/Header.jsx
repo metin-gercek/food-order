@@ -12,7 +12,6 @@ const Header = () => {
   const [isMenuModal, setIsMenuModal] = useState(false);
 
   const router = useRouter();
-  // console.log(router);
   const cart = useSelector((state) => state.cart);
 
   return (
@@ -104,7 +103,7 @@ const Header = () => {
             />{" "}
           </button>
           <Link href="/" className="md:inline-block hidden sm">
-            <button className="btn-primary">Order Online</button>
+            <button className="btn-primary" onClick={() => router.push("/menu")}>Order Online</button>
           </Link>
           <button
             className="sm:hidden inline-block"
