@@ -12,9 +12,9 @@ const About = () => {
           </div>
         </div>
         <div className="md:w-1/2 ">
-          <Title addClass="text-[40px]">We Are BitiLecious</Title>
+          <Title addClass="text-[40px]">We Are BiteLecious</Title>
           <p className="my-5 flex flex-col items-center">
-            We, at Bitilecious, are a vibrant and dynamic fast food and pizza
+            We, at Bitelecious, are a vibrant and dynamic fast food and pizza
             restaurant that caters to the cravings of food enthusiasts. With our
             diverse menu filled with mouthwatering dishes, prepared with the
             freshest ingredients and meticulous attention to detail, we offer a
