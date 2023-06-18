@@ -13,9 +13,9 @@ const Carousel = () => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
-    appenDots: (dots) => (
+    appendDots: (dots) => (
       <div>
-        <ul>{dots}</ul>
+        <ul className="container mx-auto w-full text-start">{dots}</ul>
       </div>
     ),
     customPaging: (i) => (
@@ -23,7 +23,7 @@ const Carousel = () => {
     ),
   };
   return (
-    <div className=" h-screen w-full container mx-auto -mt-[88px]">
+    <div className="h-screen w-full -mt-[88px]">
       <div className="absolute top-0 left-0 w-full h-full">
         <div className=" z-0 relative h-full w-full">
           <Image
@@ -37,8 +37,8 @@ const Carousel = () => {
       </div>
       <Slider {...settings}>
         <div>
-          <div className="mt-48 text-white flex flex-col items-start gap-y-10">
-            <Title addClass="text-6xl">Unleash Your Cravings</Title>
+          <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
+            <Title addClass="text-5xl">Fast Food Restaurant</Title>
             <p className="text-sm sm:w-2/5 w-full">
               Indulge in a Flavorful Symphony at BiteLecious! Savor our
               mouthwatering pizzas, juicy hamburgers, and refreshing beverages
@@ -48,8 +48,8 @@ const Carousel = () => {
           </div>
         </div>
         <div>
-          <div className="mt-48 text-white flex flex-col items-start gap-y-10">
-            <Title addClass="text-6xl">The Ultimate Taste Adventure</Title>
+          <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
+            <Title addClass="text-5xl">Fast Food Restaurant</Title>
             <p className="text-sm sm:w-2/5 w-full">
               Taste the Perfect Harmony of Pizza, Burgers, and More! BiteLecious
               offers a delectable assortment of handcrafted pizzas, gourmet
@@ -60,8 +60,8 @@ const Carousel = () => {
           </div>
         </div>
         <div>
-          <div className="mt-48 text-white flex flex-col items-start gap-y-10">
-            <Title addClass="text-6xl">Satisfy Your Culinary Desires</Title>
+          <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
+            <Title addClass="text-5xl">Satisfy Your Culinary Desires</Title>
             <p className="text-sm sm:w-2/5 w-full">
               Delicious Delights Await at BiteLecious! Dive into a world of
               scrumptious pizzas, juicy hamburgers, and refreshing beverages
